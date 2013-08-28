@@ -1,0 +1,27 @@
+<div class="span11 well">
+  	<legend>New Tasks Information</legend>
+    <form accept-charset="UTF-8" action="" method="post">
+      <input class="span2" name="title" placeholder="Title" type="text" ng-model="task.title"> 
+      <input class="span9" name="description" placeholder="Description" type="text" ng-model="task.description">
+      <button class="btn btn-warning" type="submit" ng-click="create()">Create</button>
+    </form>
+</div>
+<table class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th class="span1"><input type="checkbox"></th>
+      <th class="span2"></th>
+      <th class="span11"></th>
+      <th class="span2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="task in tasks">
+      <td><input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
+      <td><strong>{{task.title}}</strong></td>
+      <td><strong>{{task.description}}</strong></td>
+      <td><strong>{{task.time | momentFilter}}</strong></td>
+    </tr>
+  </tbody>
+</table>
+
